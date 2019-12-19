@@ -1,16 +1,18 @@
 import React from 'react'
-const Component = React.Component
+import {HashRouter as Router, Route,Switch,Redirect } from "react-router-dom";
+import Login from './login/Login'
+import  Video from './Pages/Video'
 
 
-class App extends Component{
-    render(){
-        return (
-            <ul className="my-list">
-                <li> <h1>{false?'JSPang.com':'技术胖'}</h1></li>
-                <li>I love React</li>
-            </ul>
-        )
-    }
-}
+
+const App = () => (
+   <Router>
+       <Switch>
+           <Route path='/' exact render={() => <Redirect to='/login' />} />
+           <Route path='/login' component={Login} />
+           <Route path='/video' component={Video} />
+       </Switch>
+   </Router>
+)
 
 export default App;

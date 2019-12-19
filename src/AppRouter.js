@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Index from './Pages/Index'
 import Workplace from './Pages/Workplace'
 import Video from './Pages/Video'
+import Login from './login/Login'
 import './index.css'
 import "antd/dist/antd.css";
 import {Layout, Menu, Breadcrumb, Icon} from 'antd';
@@ -11,7 +12,8 @@ const {Header, Content, Sider} = Layout;
 
 function AppRouter() {
    let routeConfig = [
-      {path: '/', title: '博客首页', exact: true, component: Index},
+      {path: '/', title: '博客首页', exact:  true, component: Login},
+      // {path: '/', title: '博客首页', exact: true, component: Index},
       {path: '/video/', title: '视频教程', exact: false, component: Video},
       {path:'/workplace/',title:'职场技能',exact:false,component:Workplace}
    ]
